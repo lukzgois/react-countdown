@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: Lato, 'sans-serif';
+  font-size: 16px;
+  width: 100%
+}
+
+.title {
+  font-weight: 100;
+  font-size: 3.5rem;
+  margin: 0;
+  padding: 0
+}
+
+.subtitle {
+  font-weight: 100;
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0
+}
+
+.countdown-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column
+}
+
+.countdown-clock {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 32px;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+
+.countdown-clock div {
+  margin-bottom: 16px
+}
+
+.countdown-clock p {
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin: 0
+}
+
+.countdown-clock span {
+  font-size: 2.4rem
+}
+
+/***** Slideshow ******/
+.slideshow,
+.slideshow:after { 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0; 
+    margin: 0;
+    padding: 0
+}
+.slideshow:after { 
+    content: '';
+    background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+    opacity: 0.75
+}
+
+.slideshow li span { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 36s linear infinite 0s; 
+}
+
+.slideshow li:nth-child(1) span { 
+  background-image: url('./images/avril.jpg') 
+}
+
+.slideshow li:nth-child(2) span { 
+  background-image: url('./images/simple-plan.jpg');
+  animation-delay: 6s; 
+}
+
+.slideshow li:nth-child(3) span { 
+  background-image: url('./images/bmc.jpg');
+  animation-delay: 12s; 
+}
+
+.slideshow li:nth-child(4) span { 
+  background-image: url('./images/cruj.jpg');
+  animation-delay: 18s; 
+}
+
+.slideshow li:nth-child(5) span { 
+  background-image: url('./images/blink182.jpg');
+  animation-delay: 24s; 
+}
+
+.slideshow li:nth-child(6) span { 
+  background-image: url('./images/harry.jpg');
+  animation-delay: 30s; 
+}
+
+/***** ANIMATION *****/
+@keyframes imageAnimation { 
+    0% { opacity: 0; animation-timing-function: ease-in; }
+    8% { opacity: 1; animation-timing-function: ease-out; }
+    17% { opacity: 1 }
+    25% { opacity: 0 }
+    100% { opacity: 0 }
+}
+
+@media screen and (min-width : 600px) {
+  .countdown-clock {
+    flex-direction: row;
+  }
+
+  .countdown-clock div {
+    margin: 10px
+  }
+}
